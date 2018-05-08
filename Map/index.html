@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Map</title>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+    <link rel="icon" href="img/burger.png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > $('#pics').offset().top) {
+                $('#top').fadeIn();
+            }
+            else {
+                $('#top').fadeOut();
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="map"></div>
+
+    <div id="pics">
+        <h1 id="place"></h1>
+        <div id="row"></div>
+    </div>
+
+    <img id="top" onclick="toTop()" src="img/top.png">
+
+    <script src="js/map.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Vjoxd8heJJL0tDiXCLxRHrNpBjGnuQY&callback=initMap" async defer></script>
+</body>
+</html>

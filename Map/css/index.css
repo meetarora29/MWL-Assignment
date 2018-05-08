@@ -1,0 +1,67 @@
+html {
+    height: 100%;
+}
+
+body {
+    width: 75%;
+    height: 100%;
+    margin: auto;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+#pics {
+    display: none;
+    padding-bottom: 10px;
+}
+
+#row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.col {
+    flex: 45%;
+    padding: 0 4px;
+}
+
+.col img {
+    margin-top: 10px;
+    vertical-align: middle;
+    display: block;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Alex Brush';
+    font-size: 400%;
+    padding-top: 10px;
+    padding-left: 4px;
+}
+
+#top {
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 5%;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+
+    .col {
+        flex: 100%;
+    }
+
+    #top {
+        width: 0;
+    }
+}

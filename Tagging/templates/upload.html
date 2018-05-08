@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+
+    <style>
+        .words {
+            font-size: 250%;
+            border-radius: 15px;
+            background-color: lightblue;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 10px;
+        }
+
+        #container {
+            width: 75%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="filetoUpload" id="fileUpload" accept="image/*">
+            <input type="submit" value="Upload" name="Submit">
+        </form>
+        <div id="image">
+            {% if uploaded_file %}
+                <img src="{{ uploaded_file }}" style="max-width: 75%; padding-top: 20px">
+            {% endif %}
+        </div>
+        <div id="content">
+            {% for tag in tags %}
+                <div class="words">{{ tag }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
